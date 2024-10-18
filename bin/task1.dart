@@ -1,5 +1,5 @@
-void main() {
-  List<String> names = [
+
+List<String> names = [
   'James',
   'John',
   'Michael',
@@ -10,7 +10,10 @@ void main() {
   'Charles',
   'Thomas',
   'Daniel'
-  ];
+];
+
+
+void main() {
 
   names.add('Nick');
   print(names);

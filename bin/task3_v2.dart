@@ -1,10 +1,11 @@
 import 'task1.dart';
 
+List<int> values = [76, 66, 54, 73, 60, 65, 64, 93, 85, 62];
+Map<String, int> students = Map.fromIterables(names, values);
+
+
 //Names are taken from task 1, grades are in 'values'
 void main() {
-  List<int> values = [76, 66, 54, 73, 60, 65, 64, 93, 85, 62];
-
-  Map<String, int> students = Map.fromIterables(names, values);
   print(students);
 
   students['Tim'] = 99;

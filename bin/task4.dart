@@ -31,7 +31,7 @@ void main() {
 
   groupByStudents.forEach((key, value) {
     print('Value range: $key');
-    for (var student in value) {
+    for (final student in value) {
       print(' - ${student.key} (grade: ${student.value})');
     }
   });

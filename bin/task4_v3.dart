@@ -1,11 +1,8 @@
-import 'task1.dart';
+import 'task3_v2.dart';
 import 'package:collection/collection.dart';
 
-//Names are taken from task 1, grades are in 'values'
 void main() {
-  List<int> values = [76, 66, 54, 73, 60, 65, 64, 93, 85, 62];
-
-  Map<String, int> students = Map.fromIterables(names, values);
+  //Map students are taken from task 1, grades are in 'values'
   print(students);
 
   //Perform the function of determining the ranges of grades (since all grades are different)
@@ -24,7 +21,17 @@ void main() {
   print(groupByStudents);
 
   //Specify a list of ranges for ordered output
-  final orderedRanges = ['0-60', '61-70', '71-80', '81-90', '91-100'];
+  final orderedRanges = groupByStudents.keys.toList();
+
+  print('\nUnique grades keys: $orderedRanges');
+
+  orderedRanges.sort((a, b) {
+    final aStart = int.parse(a.split('-').first);
+    final bStart = int.parse(b.split('-').first);
+    final sortRanges = aStart.compareTo(bStart);
+    print(sortRanges);
+    return sortRanges;
+  });
 
   for (final range in orderedRanges) {
     if (groupByStudents.containsKey(range)) {
